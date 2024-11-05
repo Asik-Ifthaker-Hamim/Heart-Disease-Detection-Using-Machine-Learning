@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Detection</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            background: url('static/bg.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            backdrop-filter: blur(10px);
+        }
+        .container {
+            max-width: 500px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.5); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px); 
+            color: #333;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #4f1738;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #001c2e;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+            font-family: 'Times New Roman', sans-serif;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container">
+    <h1>Heart Disease Detection</h1>
+    <form method="POST" action="{{ url_for('home') }}">
+        <label>Age:</label>
+        <input type="text" name="a" placeholder="Enter age">
+
+        <label>Sex:</label>
+        <input type="text" name="b" placeholder="Enter 1 for male, 0 for female">
+
+        <label>Chest Pain:</label>
+        <input type="text" name="c" placeholder="Enter chest pain type (0-3)">
+
+        <label>Resting Blood Pressure:</label>
+        <input type="text" name="d" placeholder="Enter blood pressure (mm Hg)">
+
+        <label>Serum Cholesterol:</label>
+        <input type="text" name="e" placeholder="Enter cholesterol level (mg/dl)">
+
+        <label>Fasting Blood Sugar:</label>
+        <input type="text" name="f" placeholder="Enter 1 if > 120 mg/dl, else 0">
+
+        <label>Resting ECG Results:</label>
+        <input type="text" name="g" placeholder="Enter ECG result (0-2)">
+
+        <label>Max Heart Rate Achieved:</label>
+        <input type="text" name="h" placeholder="Enter max heart rate achieved">
+
+        <label>Exercise-Induced Angina:</label>
+        <input type="text" name="i" placeholder="Enter 1 for yes, 0 for no">
+
+        <label>ST Depression:</label>
+        <input type="text" name="j" placeholder="Enter ST depression value">
+
+        <label>Slope of Peak Exercise:</label>
+        <input type="text" name="k" placeholder="Enter slope (0-2)">
+
+        <label>Number of Major Vessels (0-4):</label>
+        <input type="text" name="l" placeholder="Enter number of vessels (0-4)">
+
+        <label>Thalassemia:</label>
+        <input type="text" name="m" placeholder="Enter Thalassemia type (0-2)">
+
+        <input type="submit" value="PREDICT!">
+    </form>
+    
+    <div class="image-container">
+        <img src="static/primary.jpeg" alt="Heart image">
+    </div>
+</div>
+
+</body>
+</html>
